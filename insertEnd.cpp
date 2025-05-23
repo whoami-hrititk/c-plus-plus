@@ -12,6 +12,7 @@ void printNode(node*& head){
 		std::cout<<"Node "<<++count<<" :"<<load_node->num<<std::endl;
 		load_node = load_node->nextNum;
 	}
+	std::cout<<"Node "<<++count<<" :"<<" Null"<<std::endl;
 	return;
 }
 
@@ -21,12 +22,10 @@ void insertNode(node*& head, int value){
 	new_n->nextNum = nullptr;
 	if(head){
 		node* save_n = head;
-		save_n = head;
-		while(save_n){
-			save_n = head->nextNum;
+		while(save_n->nextNum){
+			save_n = save_n->nextNum;
 		}
-		save_n = new_n;
-		head->nextNum = save_n;
+		save_n->nextNum = new_n;
 	}else{
 		head = new_n;
 	}
