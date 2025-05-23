@@ -50,7 +50,7 @@ int main(){
 		std::cout<<"Enter a value to add in new node: ";
 		std::cin>>num;
 		insertNode(head, num);
-		freeMemory(head);
 	}
+	freeMemory(head);
 	return 0;
 }
