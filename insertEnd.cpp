@@ -16,6 +16,15 @@ void printNode(node*& head){
 	return;
 }
 
+void freeMemory(node*& head){
+	while(head){
+		node* load_n = head;
+		head = load_n->nextNum;
+		delete load_n;
+	}
+	return;
+}
+
 void insertNode(node*& head, int value){
 	node* new_n = new node;
 	new_n->num = value;
@@ -41,6 +50,7 @@ int main(){
 		std::cout<<"Enter a value to add in new node: ";
 		std::cin>>num;
 		insertNode(head, num);
+		freeMemory(head);
 	}
 	return 0;
 }
