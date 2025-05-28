@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 struct node{
 	int num;
 	node* nextNum;
